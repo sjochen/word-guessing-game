@@ -17,7 +17,7 @@ body {
 .jumbotron {
     background-color: white;
     text-align: center;
-    
+   
 }
 
 #stick {
@@ -36,11 +36,8 @@ body {
     padding-right: 50px;
 }
 
-@font-face {
-    font-family: "Harabara Bold";
-    src: url("css/fonts/Harabara.eot");
-    src: 
-    url("css/fonts/Harabara.woff") format("woff"),
-    url("css/fonts/Harabara.otf") format("opentype"),
-    url("css/fonts/Harabara.svg#filename") format("svg");
-    }
+
+.display-4 {
+    font-family: 'Black Ops One', cursive;
+    
+        }
