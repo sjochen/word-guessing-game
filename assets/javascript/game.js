@@ -22,8 +22,8 @@ var remainingGuesses = 0;
 var gameStarted = false;        
 var hasFinished = false;           
 var wins = 0;
-var winSound = new Audio ("C:\Users\SJochen\Desktop\CP\word-guessing-game\assets\images\gh.mp3");
-var loseSound;                   
+var winSound = document.getElementById("winSound");
+var loseSound = document.getElementById("loseSound");                   
 
 
 
@@ -129,6 +129,7 @@ function updateDisplay() {
     document.getElementById("guessedLetters").innerText = guessedLetters;
     if(remainingGuesses <= 0) {
         document.getElementById("you-lose").style.cssText = "display: Block";
+        loseSound.play();
         document.getElementById("tryAgain").style.cssText = "display: Block";
         hasFinished = true;
     }
