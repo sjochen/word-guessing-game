@@ -22,7 +22,7 @@ var remainingGuesses = 0;
 var gameStarted = false;        
 var hasFinished = false;           
 var wins = 0;
-var winSound = sound("../assets/images/gh.mp3");
+var winSound = new Audio ("C:\Users\SJochen\Desktop\CP\word-guessing-game\assets\images\gh.mp3");
 var loseSound;                   
 
 
