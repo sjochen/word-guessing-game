@@ -15,25 +15,25 @@ var words = [
 
 ]
 
-var guessedLetters = [];        
-var currentWordIndex;           
-var guessingWord = [];          
-var remainingGuesses = 0;       
-var gameStarted = false;        
-var hasFinished = false;           
+var guessedLetters = [];
+var currentWordIndex;
+var guessingWord = [];
+var remainingGuesses = 0;
+var gameStarted = false;
+var hasFinished = false;
 var wins = 0;
 var winSound = document.getElementById("winSound");
-var loseSound = document.getElementById("loseSound");                   
-
-
-
-
+var loseSound = document.getElementById("loseSound");
 const maxTries = 13;
 
 
 
 
-function resetGame () {
+
+
+
+
+function resetGame() {
     remainingGuesses = maxTries;
     gameStarted = false;
     currentWordIndex = Math.floor(Math.random() * words.length);
@@ -61,7 +61,7 @@ document.onkeydown = function (event) {
         resetGame();
         hasFinished = false;
     } else {
-        if(event.keyCode >= 65 && event.keyCode <= 90) {
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key.toLowerCase());
         }
     }
@@ -73,7 +73,7 @@ function makeGuess(letter) {
             gameStarted = true;
         }
 
-        
+
         if (guessedLetters.indexOf(letter) === -1) {
             guessedLetters.push(letter);
             evaluateGuess(letter);
@@ -87,7 +87,7 @@ function makeGuess(letter) {
 
 
 function checkWin() {
-    if(guessingWord.indexOf(" _ ") === -1) {
+    if (guessingWord.indexOf(" _ ") === -1) {
         document.getElementById("you-win").style.cssText = "display: Block";
         winSound.play();
         document.getElementById("tryAgain").style.cssText = "display: Block";
@@ -97,22 +97,22 @@ function checkWin() {
 };
 
 function evaluateGuess(letter) {
-    
+
     var positions = [];
 
     for (var i = 0; i < words[currentWordIndex].length; i++) {
-        if(words[currentWordIndex][i] === letter) {
+        if (words[currentWordIndex][i] === letter) {
             positions.push(i);
         }
     }
 
-    
+
     if (positions.length <= 0) {
         remainingGuesses--;
-        
+
     } else {
-        
-        for(var i = 0; i < positions.length; i++) {
+
+        for (var i = 0; i < positions.length; i++) {
             guessingWord[positions[i]] = letter;
         }
     }
@@ -127,7 +127,7 @@ function updateDisplay() {
     }
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("guessedLetters").innerText = guessedLetters;
-    if(remainingGuesses <= 0) {
+    if (remainingGuesses <= 0) {
         document.getElementById("you-lose").style.cssText = "display: Block";
         loseSound.play();
         document.getElementById("tryAgain").style.cssText = "display: Block";
