@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../images/bg1.jpg);
+    background-image: url(../images/hock.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -38,5 +38,8 @@ body {
 .display-4 {
     font-family: 'Black Ops One', cursive;
 
-    
-        }
+}
+
+.gameplay-column{
+    color: rgb(253, 253, 253);
+}
